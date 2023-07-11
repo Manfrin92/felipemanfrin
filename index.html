@@ -1,9 +1,68 @@
-<!doctype html>
-<html>
-  <head>
-    <title>This is the title of the webpage!</title>
-  </head>
-  <body>
-    <p>This is an example paragraph. Anything in the <strong>body</strong> tag will appear on the page, just like this <strong>p</strong> tag and its contents.</p>
-  </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Felipe Manfrin Shop</title>
+
+  <style>
+    body {
+      background-color: white;
+      color: black;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    body.dark-mode {
+      background-color: #222;
+      color: white;
+    }
+
+    .container {
+      padding: 20px;
+      text-align: center;
+    }
+
+    .dark-mode-toggle {
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+
+    .dark-mode-toggle input[type="checkbox"] {
+      display: none;
+    }
+
+    .dark-mode-toggle-label {
+      display: inline-block;
+      background-color: #555;
+      color: white;
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+
+    .dark-mode-toggle-label:hover {
+      background-color: #777;
+    }
+
+    .dark-mode-toggle input[type="checkbox"]:checked + .dark-mode-toggle-label {
+      background-color: #000;
+    }
+  </style>
+
+  <script>
+    function toggleDarkMode() {
+      const body = document.querySelector('body');
+      body.classList.toggle('dark-mode');
+    }
+  </script>
+</head>
+<body class="dark-mode">
+  <div class="container">
+    <h1>felipe manfrin</h1>
+
+    <div class="dark-mode-toggle">
+      <input type="checkbox" id="dark-mode-toggle" onclick="toggleDarkMode()">
+      <label class="dark-mode-toggle-label" for="dark-mode-toggle">Toggle Dark Mode</label>
+    </div>
+  </div>
+</body>
 </html>
